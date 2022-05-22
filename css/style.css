@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Typography */
+
+html {
+    font-size: 62.5%; /*62.5% relevant to the font size of the root element (10px)*/
+}
+
+body {
+    font-family: "roboto", sans-serif;
+    font-size: 2em;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: #333;
+}
+
+/* Carousel */
+
+.carousel {
+    display: grid;
+    grid-template-columns: 4em 60vw 4em;
+    grid-template-rows: 70vh 3em;
+    align-items: center;
+    grid-gap: 1em;
+}
+
+.carousel > *:nth-child(2) {
+    grid-column: 2;
+    align-self: stretch;
+}
+
+.carousel_contents-container {
+    height: 100%;
+    overflow: hidden;
+}
+
+.carousel_contents {
+    width: 100%;
+    height: 100%;
+    transform: translate(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel_slide {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+}
+
+.carousel_slide > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+.carousel_slide img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* Carousel button */
+
+.carousel_btn {
+    cursor: pointer;
+    padding: 0.25em;
+    border: 0;
+    background: transparent;
+}
+
+.carousel_btn svg {
+    fill: grey;
+}
+
+.carousel_btn:hover svg,
+.carousel_btn:active svg {
+    fill: rgb(107, 107, 195);
+}
+
+.carousel_button.is-hidden {
+    display: none;
+}
+
+/* Carousel dots */
+
+.carousel_dots {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+.carousel_dot {
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-radius: 100%;
+    background-color: grey;
+    cursor: pointer;
+}
+
+.carousel_dot + .carousel_dot {
+    margin-left: 1em;
+}
+.carousel_dot.is-selected {
+    background-color: rgb(17, 26, 101);
+}
+
+.carousel_dot:hover {
+    background-color: rgb(107, 107, 195);
+}
+
+.is-hidden {
+    display: none;
+}
